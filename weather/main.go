@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
-	fmt.Print("今日の天気\n")
-	weather.GpsInfo()
+	name, weather, temp := weather.WeatherInfo()
+
+	fmt.Printf("現在地: %s 天気: %s 気温: %.1f°C\n", name, weather, temp)
 }

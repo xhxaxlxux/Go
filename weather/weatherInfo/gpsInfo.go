@@ -1,14 +1,13 @@
-package main
+package weather
 
 import (
-	"fmt"
 	"io/ioutil"
 	"net/http"
 
 	"github.com/antonholmquist/jason"
 )
 
-func GpsInfo() {
+func GpsInfo() (string, string) {
 	url := "https://get.geojs.io/v1/ip/geo.json"
 
 	resp, _ := http.Get(url)
@@ -25,8 +24,5 @@ func GpsInfo() {
 	latitude, _ := v.GetString("latitude")
 	longitude, _ := v.GetString("longitude")
 
-	fmt.Println("latitude:" + latitude)
-	fmt.Println("longitude:" + longitude)
-
-	fmt.Print("今日の天気\n")
+	return latitude, longitude
 }
