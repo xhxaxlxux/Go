@@ -12,7 +12,7 @@ func WeatherInfo() (string, string, float64) {
 	lat := "lat="
 	lon := "&lon="
 	lang := "&lang=ja"
-	apiKey := "&appid=dc50e0299975beb9d2e03e7702ca8bad"
+	apiKey := ""
 	units := "&units=metric" // 摂氏指定
 
 	latitude, longitude := GpsInfo()
